@@ -7,7 +7,7 @@ Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mosaiccalc-feedstock/blob/main/LICENSE.txt)
 
-Summary: Part of the Project MOSAIC (<http://mosaic-web.org/>) suite that provides utility functions for doing calculus (differentiation and integration) in R. The main differentiation and antidifferentiation operators are described using formulas and return functions rather than numerical values. Numerical values can be obtained by evaluating these functions.
+Summary: Software to support the introductory *MOSAIC Calculus* textbook <https://www.mosaic-web.org/MOSAIC-Calculus/>), one of many data- and modeling-oriented educational resources developed by Project MOSAIC (<https://www.mosaic-web.org/>). Provides symbolic and numerical differentiation and integration, as well as support for applied linear algebra (for data science), and differential equations/dynamics. Includes grammar-of-graphics-based functions for drawing vector fields, trajectories, etc. The software is suitable for general use, but intended mainly for teaching calculus.
 
 Current build status
 ====================
