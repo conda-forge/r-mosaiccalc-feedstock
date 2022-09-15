@@ -5,9 +5,9 @@ Home: https://github.com/ProjectMOSAIC/mosaicCalc
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mosaiccalc-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-mosaiccalc-feedstock/blob/main/LICENSE.txt)
 
-Summary: Part of the Project MOSAIC (<http://mosaic-web.org/>) suite that provides utility functions for doing calculus (differentiation and integration) in R. The main differentiation and antidifferentiation operators are described using formulas and return functions rather than numerical values. Numerical values can be obtained by evaluating these functions.
+Summary: Software to support the introductory *MOSAIC Calculus* textbook <https://www.mosaic-web.org/MOSAIC-Calculus/>), one of many data- and modeling-oriented educational resources developed by Project MOSAIC (<https://www.mosaic-web.org/>). Provides symbolic and numerical differentiation and integration, as well as support for applied linear algebra (for data science), and differential equations/dynamics. Includes grammar-of-graphics-based functions for drawing vector fields, trajectories, etc. The software is suitable for general use, but intended mainly for teaching calculus.
 
 Current build status
 ====================
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14338&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-mosaiccalc-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=14338&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-mosaiccalc-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-mosaiccalc` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-mosaiccalc` can be installed with `conda`:
 
 ```
 conda install r-mosaiccalc
 ```
 
-It is possible to list all of the versions of `r-mosaiccalc` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-mosaiccalc
+```
+
+It is possible to list all of the versions of `r-mosaiccalc` available on your platform with `conda`:
 
 ```
 conda search r-mosaiccalc --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-mosaiccalc --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-mosaiccalc --channel conda-forge
+
+# List packages depending on `r-mosaiccalc`:
+mamba repoquery whoneeds r-mosaiccalc --channel conda-forge
+
+# List dependencies of `r-mosaiccalc`:
+mamba repoquery depends r-mosaiccalc --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
