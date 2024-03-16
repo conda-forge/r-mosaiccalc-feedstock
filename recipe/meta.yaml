@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mosaicCalc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mosaicCalc/mosaicCalc_{{ version }}.tar.gz
-  sha256: decb5a2becef70f1ddb03cf7c17ccf0b3c7239151839562612957b7f017f2196
+  sha256: aab55426091ab182d4251cab8e91264963c74acc9431875ea4703cc7cc786894
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -71,13 +71,8 @@ test:
 about:
   home: https://github.com/ProjectMOSAIC/mosaicCalc
   license: GPL-2.0-or-later
-  summary: Software to support the introductory *MOSAIC Calculus* textbook <https://www.mosaic-web.org/MOSAIC-Calculus/>),
-    one of many data- and modeling-oriented educational resources developed by Project
-    MOSAIC (<https://www.mosaic-web.org/>). Provides symbolic and numerical differentiation
-    and integration, as well as support for applied linear algebra (for data science),
-    and differential equations/dynamics. Includes grammar-of-graphics-based functions
-    for drawing vector fields, trajectories, etc. The software is suitable for general
-    use, but intended mainly for teaching calculus.
+  summary: Software to support the introductory *MOSAIC Calculus* textbook <https://www.mosaic-web.org/MOSAIC-Calculus/>), one of many data- and modeling-oriented educational resources developed by Project MOSAIC (<https://www.mosaic-web.org/>). Provides symbolic and numerical differentiation and integration, as well as
+    support for applied linear algebra (for data science), and differential equations/dynamics. Includes grammar-of-graphics-based functions for drawing vector fields, trajectories, etc. The software is suitable for general use, but intended mainly for teaching calculus.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
